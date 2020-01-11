@@ -5,21 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <title>I'm Aidan | Home</title>
+        <title>I'm Aidan | Contact</title>
 <!-- My Code -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- Google Webfonts -->
         <link href="https://fonts.googleapis.com/css?family=Lobster|Nosifer" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'> 
+        <script type="text/javascript">
+        
+            function emailMe() {
+                var formElements = document.getElementsByTagName('input');
 
+                for(var index = 0; index < formElements.length; index += 1) {
+                    formElements[index].value = '';
+                }
+
+                alert('Email Sent!');
+            }
+        
+        </script>
     </head>
     
     <body>
         <div class="containernav">
             <nav> <!-- Code from class but modified -->
                 <ul>
-                    <li class="active">
-                        <a href="#">Home</a>
+                    <li>
+                        <a href="index.html">Home</a>
                     </li>
                             
                     <li>
@@ -29,7 +41,7 @@
                         <a href="cv.html">cv</a> </a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a> </a>
+                        <a href="contact.html" class="active">Contact</a>
                     </li>
         
                 </ul> 
@@ -42,8 +54,14 @@
         <div class="content">
             <div>
                 <h1>Hello, I'm Aidan</h1>
-                <p>I am currently a full-time student at the University of Northampton. 
-                I am studying Web Technology & Security, working towards a BSc Degree.</p>
+                <form>
+                    <!--https://material.io/components/text-fields/#-->
+                    <p>Email</p>
+                    <input type="email" name="email address" />
+                    <p>Message</p>
+                    <input type="message" name="message" />
+                    <button onclick="javascript:emailMe();">Contact Me</button>
+                </form>
             </div>
         </div>
         

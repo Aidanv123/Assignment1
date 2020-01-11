@@ -1,14 +1,46 @@
-                                /* Text */
+/*Body - My code*/
+body{
+    background-color: gray;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+} 
+
+.content {
+    text-align: center;
+    padding: 0 40px 40px 40px;
+}
+
+.content > div {
+    text-align: left;
+    max-width: 750px;
+    display: inline-block;
+}
+
+.content > div > h1 {
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.content > div > p {
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+/* Text */
 /* This is the CSS code for the <h> code in all pages, these are the text font for the text on the screen*/
 h1 {
     /*Use of Google Web Fonts, My code, font from link on Index */    
-    font-size: 3.5em;
+    font-size: 2rem;
     font-weight: 400;
     text-align: center;
     font-family: 'Helvetica';
     color:white;
+    margin: 0;
  }
- h2 {
+ p {
      font-family: 'Helvetica';font-size: 20px;
      color: white;
      text-align: center;
@@ -36,23 +68,22 @@ h5 {
 
 
                 /* Navigation -- Class code, Slightly modified */
- nav {
-    margin: 50px;
+nav {
+    text-align: left;
 }
-
 ul {
-    display: inline;
+    display: block;
     list-style-type: none;
+    padding: 40px 0;
+    margin: 0;
 }
 
 li {
-    height: 50px;
-    float: left;
+    display: block;
+    line-height: 40px;
     margin-right: 0px;
-    border-right: 1px solid
-    #aaa;
-    padding: 0 20px;
-    overflow: visible;
+    padding: 0 40px;
+    overflow: inline;
 }
 
 li:last-child{
@@ -62,9 +93,9 @@ li:last-child{
 li a {
     text-decoration: none;
     color: #ccc;
-    font: 25px/1 Helvetica, Verdana, sans-serif;
+    font: 24px Helvetica, Verdana, sans-serif;
     text-transform: uppercase;
-    
+    transition: all 0.5s ease;
 }
 .containernav{
     overflow: hidden;
@@ -78,55 +109,77 @@ li a:hover {
 li.active a {
     font-weight: bold;
     color: #333;
+}
 
+img.profile-pic{
+    width: 100%;
 }
-        
 
-/*Body - My code*/
-   body{
-       background-color: gray;
-       text-align: center;
-       margin: 0;
-       padding: 2em;
-   } 
-            
-   /* Images on index.html */
-
-   .imgsocial {
-    border-style: none;
-    -webkit-border-radius: 10% 20%; /* Here is use of border radius on the images */
-    float: right;
-   
- }
-.imgindex{
-    overflow: hidden;
-    float: left;
-    border-style: none;
-}
-img.rounded-corners{-webkit-border-radius: 50px; /* Code from https://ianrmedia.unl.edu/resources/rounded-corners-image, slightly modified */
-}
-/* My code */
-.imgindex:hover{
-    -webkit-filter: grayscale(1);
-   
-}
-.imgsocial:hover{
-    -webkit-filter: grayscale(1);
-    
+footer {
+    text-align: left;
+    padding: 0 40px 40px 40px;
 }
 
 /* Media Queries -- my code */
 
-@media only screen and (max-width: 768px) {
+/* This transforms the layout at the natural break of the design which is considered better practise than designing 
+for specific resolutions - https://www.smashingmagazine.com/2013/03/logical-breakpoints-responsive-design/ */
+@media only screen and (min-width: 768px) {
+    nav {
+        display: block;
+        text-align: center;
+    }
+
+    li {
+        display: inline;
+        line-height: 14px;
+        border-right: 1px solid #aaa;
+    }
     
+    li:last-child{
+        border-right: none;
+    }
+
+    img.profile-pic {
+        border-radius: 20px; /* Code from https://ianrmedia.unl.edu/resources/rounded-corners-image, slightly modified */
+        width: auto;
+    }
+
+    footer {
+        text-align: center;
+    }
 }
+
+/* Images on index.html */
+
+.imgsocial {
+    border-style: none;
+    border-radius: 10% 20%; /* Here is use of border radius on the images */
+    float: right;  
+ }
+.imgindex{
+    overflow: hidden;
+    border-style: none;
+}
+
+/* My code */
+.imgindex:hover{
+    filter: grayscale(1);
+    transition: background-size 0.3s ease;
+}
+.imgsocial:hover{
+    filter: grayscale(1);
+    transition: background-size 0.3s ease;
+}
+
 
 /* portfolio */
 .gallery-item
 {
     max-width: 100%;
-    -webkit-border-radius: 5px;
-    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: all .3s;
     overflow: hidden;
     position: relative;
 }
@@ -166,36 +219,47 @@ img.rounded-corners{-webkit-border-radius: 50px; /* Code from https://ianrmedia.
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8)
 }
 
-        /* CV */ /* code from https://css-tricks.com/snippets/css/a-guide-to-flexbox/ - parts were changed*/
-        .box {
-            display: flex;  
-            flex-flow: row wrap;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 100px;
-            float: right;
-          }
-          
-          .box > * {
-            padding: 10px;
-            flex: 1 100%;
-          }
-          .container1 {
-            text-align: left;
-            background-color: white;
-            
-          }
-          
-        @media all and (min-width: 600px) {
-            .aside { flex: 1 0 0; }
-          }
-          
-          @media all and (min-width: 800px) {
-            .main    { flex: 3 0px; }
-            .aside-1 { order: 1; } 
-            .main    { order: 2; }
-            
-          }
-     
+footer a img {
+    width: 50px;
+}
+
+/* CV */ /* code from https://css-tricks.com/snippets/css/a-guide-to-flexbox/ - parts were changed*/
+.container {
+    display: flex;
+}
+
+.container h4 {
+    margin: 0;    
+    padding: 40px;
+    width: 30%;
+    min-width: 300px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+.container h5 {
+    margin: 0;
+    padding: 40px;
+    max-width: 70%;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: justify;
+}
+
+.container h5 p {
+    margin: 0;
+}
+
+.about-portfolio {
+    padding-bottom: 40px;
+}
+
+.about-portfolio h1 {
+    margin-bottom: 20px;
+    text-align: left;
+}
 
 
