@@ -2,7 +2,7 @@
 /* This is the CSS code for the <h> code in all pages, these are the text font for the text on the screen*/
 h1 {
     /*Use of Google Web Fonts, My code, font from link on Index */    
-    font-size: 3.5rem;
+    font-size: 3.5em;
     font-weight: 400;
     text-align: center;
     font-family: 'Helvetica';
@@ -41,7 +41,7 @@ h5 {
 }
 
 ul {
-    display: box;
+    display: inline;
     list-style-type: none;
 }
 
@@ -52,7 +52,7 @@ li {
     border-right: 1px solid
     #aaa;
     padding: 0 20px;
-    overflow: inline;
+    overflow: visible;
 }
 
 li:last-child{
@@ -64,7 +64,7 @@ li a {
     color: #ccc;
     font: 25px/1 Helvetica, Verdana, sans-serif;
     text-transform: uppercase;
-    transition: all 0.5s ease;
+    
 }
 .containernav{
     overflow: hidden;
@@ -94,7 +94,7 @@ li.active a {
 
    .imgsocial {
     border-style: none;
-    border-radius: 10% 20%; /* Here is use of border radius on the images */
+    -webkit-border-radius: 10% 20%; /* Here is use of border radius on the images */
     float: right;
    
  }
@@ -103,16 +103,16 @@ li.active a {
     float: left;
     border-style: none;
 }
-img.rounded-corners{border-radius: 50px; /* Code from https://ianrmedia.unl.edu/resources/rounded-corners-image, slightly modified */
+img.rounded-corners{-webkit-border-radius: 50px; /* Code from https://ianrmedia.unl.edu/resources/rounded-corners-image, slightly modified */
 }
 /* My code */
 .imgindex:hover{
-    filter: grayscale(1);
-    transition: background-size 0.3s ease;
+    -webkit-filter: grayscale(1);
+   
 }
 .imgsocial:hover{
-    filter: grayscale(1);
-    transition: background-size 0.3s ease;
+    -webkit-filter: grayscale(1);
+    
 }
 
 /* Media Queries -- my code */
@@ -125,9 +125,8 @@ img.rounded-corners{border-radius: 50px; /* Code from https://ianrmedia.unl.edu/
 .gallery-item
 {
     max-width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    transition: all .3s;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     overflow: hidden;
     position: relative;
 }
