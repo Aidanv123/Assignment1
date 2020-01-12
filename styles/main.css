@@ -40,13 +40,15 @@ h1 {
     color:white;
     margin: 0;
  }
+ 
  p {
      font-family: 'Helvetica';font-size: 20px;
      color: white;
-     text-align: center;
+     text-align: left;
      margin: 0;
      padding: 0;
  }
+ 
  h3 {
      color: black;
  }
@@ -62,7 +64,6 @@ h5 {
     font-size: 15px; 
     color:black;
     text-align: center;
-    
 }
 
 
